@@ -1,7 +1,6 @@
 module Api::V1
   class RegistrationsController < ApiController
-    before_action :authenticate_user!
-    
+  
     def payments
       @registration = Registration.find_by(cpf: params[:cpf])
       return render json: @registration.payments, status: 200 if @registration != nil

@@ -1,5 +1,4 @@
 class Api::V1::NotificationsController < Api::V1::ApiController
-
   def create
     @registration = Registration.new(set_params)
 

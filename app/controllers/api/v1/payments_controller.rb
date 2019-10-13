@@ -1,4 +1,5 @@
 class Api::V1::PaymentsController < Api::V1::ApiController
+  before_action :authenticate_user!, only: %i[show]
   def show
     @payments = Registration.where('cpf LIKE ?', params[:id]).take!
     render json: @payments, only: :cpf, status: :ok,

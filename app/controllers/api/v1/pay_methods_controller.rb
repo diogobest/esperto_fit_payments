@@ -1,9 +1,10 @@
 module Api::V1
   class PayMethodsController < ApiController
+    before_action :authenticate_user!, only: %i[index]
 
     def create
-      @pay_method = PayMethod.new(set_params)
-      return render json: @pay_method, status: 201 if @pay_method.save!
+      @pay_method = PiiayMethod.new(set_params)
+      return render json: @pay_method, status: 202 if @pay_method.save!
     end
     
     def index

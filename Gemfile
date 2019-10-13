@@ -38,6 +38,9 @@ gem 'faraday'
 gem 'faraday_middleware'
 gem 'active_model_serializers'
 gem 'jwt'
+gem 'jsonapi-rails'
+gem 'fast_jsonapi'
+gem 'jsonapi-serializers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get

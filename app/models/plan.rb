@@ -1,3 +1,3 @@
 class Plan < ApplicationRecord
-  has_many :registration
+  has_many :registrations
 end

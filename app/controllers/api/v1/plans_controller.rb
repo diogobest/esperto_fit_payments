@@ -1,5 +1,6 @@
 module Api::V1
   class PlansController < ApiController
+
     def create
       @plan = Plan.new(set_params)
       if @plan.save!
@@ -8,8 +9,10 @@ module Api::V1
     end
 
     def index
-      @plan = Plan.all
-      return render json: @plan, only: [ :id, :name, :value ], status: 200 if @plan != nil
+      # @plan = Plan.all
+      # return render json: @plan, only: [ :id, :name, :value ], status: 200 if @plan != nil
+      plans = Plan.all
+      render json: serialize_models(plans)
     end
 
     def show
