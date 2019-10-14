@@ -1,6 +1,6 @@
 module Api::V1
   class PlansController < ApiController
-
+    before_action :doorkeeper_authorize!
     def create
       @plan = Plan.new(set_params)
       if @plan.save!

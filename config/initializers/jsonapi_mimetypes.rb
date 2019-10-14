@@ -6,4 +6,3 @@ module JSONAPI
     JSON.parse(body)
   end
   ActionDispatch::Request.parameter_parsers = ActionDispatch::Request::DEFAULT_PARSERS
-end
