@@ -12,7 +12,7 @@ module Api::V1
       # @plan = Plan.all
       # return render json: @plan, only: [ :id, :name, :value ], status: 200 if @plan != nil
       plans = Plan.all
-      render json: serialize_models(plans)
+      render json: serialize_models(plans) # TODO(diogo): filter messages
     end
 
     def show

@@ -1,7 +1,7 @@
 class Api::V1::ApiController < ApplicationController 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   # before_action :check_auth
-  # JSONAPI- SERIALIZER
+  # jsonapi-serializers
   def serialize_model(model, options = {})
     options[:is_collection] = false
     JSONAPI::Serializer.serialize(model, options)
